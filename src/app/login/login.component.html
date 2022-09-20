@@ -1,0 +1,59 @@
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+
+  <div class="row d-flex">
+    <div class="col-lg-5">
+      <div class="card2 card border-0 px-4 py-5">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="row mb-4 px-3">
+            <h2 class="mb-0 mt-2">Welcome to Tweet APP</h2>
+          </div>
+          <div class="row px-3 mb-4">
+            <div class="line"></div>
+            <small class="or text-center">Login</small>
+            <div class="line"></div>
+          </div>
+          <div class="row px-3">
+            <input type="text" formControlName="userName" class="user-input" placeholder="Username" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+              <div *ngIf="f.userName.errors.required">Username is required</div>
+            </div>
+          </div>
+          <div class="row px-3">
+            <input type="password" formControlName="password" class="pass-input" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+          </div>
+          <div *ngIf="invalid" class="text-danger">
+            <p>Invalid Credentials:( Please enter correct Username and Password</p>
+          </div>
+          <div class="row mb-3 px-3">
+            <button type="submit" class="btn btn-register text-center">Login</button>
+          </div>
+          <div class="row mb-4 px-3">
+            <small class="font-weight-bold">Don't have an account? <a class="text-info" routerLink="register">Register</a></small>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="card1 pb-6">
+        <!-- <div class="row">
+            <img src="https://img.icons8.com/fluency/48/000000/butterfly-side-view.png" class="logo">
+          </div> -->
+        <div class="row px-3 justify-content-center mt-4 mb-5">
+          <!-- <img src="../../assets/tweet-splash.jpg" class="image"> -->
+          <img src="assets/login.jpg" class="image">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="copyright py-4" style="margin-top: 80px;">
+  <div class="px-3">
+    <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2022. All rights reserved.</small>
+  </div>
+</div>
