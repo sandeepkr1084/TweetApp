@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'simpletweetapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E7F864BF4E6C4D44B7A0D6DA573E0A0B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9A26A3DFD7154812A09542AA1B10140F }}
           package: .
