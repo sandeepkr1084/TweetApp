@@ -25,7 +25,6 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -51,6 +50,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'simpletweetapp'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9A26A3DFD7154812A09542AA1B10140F }}
-          package: .
+          package: ./dist/tweet-app-frontend
