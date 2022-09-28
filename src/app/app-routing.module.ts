@@ -7,6 +7,7 @@ import { TweetListComponent } from './tweet-list/tweet-list.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { JwtGuard } from './services/jwt.guard';
+import { MyTweetsComponent } from './my-tweets/my-tweets.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,11 @@ const routes: Routes = [
       { 
         path:"" , 
         component: TweetListComponent,
+        canActivate:[JwtGuard],
+      },
+      { 
+        path:"my-tweets" , 
+        component: MyTweetsComponent,
         canActivate:[JwtGuard],
       },
       {

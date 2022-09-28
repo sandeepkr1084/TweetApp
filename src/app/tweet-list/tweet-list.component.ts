@@ -79,19 +79,6 @@ export class TweetListComponent implements OnInit {
     console.log("tweet: ",tweet);
     $('#editModal').appendTo("body").modal('show');
 
-    //for Mat Dialog
-    // const editDialogconfig=new MatDialogConfig();
-    // editDialogconfig.disableClose=true;
-    // editDialogconfig.autoFocus=true;
-    // editDialogconfig.data=tweet;
-
-    // const editDialogRef=this.dialog.open(EditTweetComponent,editDialogconfig)
-
-    // editDialogRef.afterClosed().subscribe(
-    //   editDate=>console.log("from dialog ",editDate)
-      
-    // )
-
   }
   openReplyTweetPopup(tweet: Tweet) {
     this.currentTweet = tweet;

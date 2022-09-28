@@ -5,7 +5,7 @@
     <div class="col-md-7">
       <div class="row">
         <div class="card mb-2 mt-3 w-100">
-          <h4 class="card-header" style=" background: #34eb92;">Post your tweet here..</h4>
+          <h4 class="card-header" style=" background: #34eb92;">Post your tweet...</h4>
           <div class="card-body">
             <form [formGroup]="tweetForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
@@ -21,7 +21,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <button [disabled]="loading" type="submit" class="btn btn-outline-primary">
+                <button [disabled]="loading" type="submit" class="btn btn-outline-success">
                   <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                   Post
                 </button>
@@ -50,14 +50,14 @@
             <div class="entete card w-100 h-100">
               <div class="row no-gutters">
                 <div class="col-md-2">
-                  <img src="../../assets/icons8-male-user-96.png"
+                  <img src="../../assets/person.png"
                     [ngClass]="tweet.user.username == currentUser.username ?'card-img':'card-img grayscale'"
                     alt="..." />
                 </div>
                 <div class="col-md-10">
                   <div class="card-body">
                     <h5 class="card-title">
-                      {{ tweet.user.username }}
+                      @{{ tweet.user.username }}
                       <span class="float-right" *ngIf="tweet.user.username == currentUser.username">
                         <button class="btn btn-outline-dark ml-2" (click)="openEditTweetPopup(tweet)">
                           <i class="fa fa-edit"></i></button><button class="btn btn-outline-danger ml-2"
@@ -82,7 +82,7 @@
                           <i class="fa fa-thumbs-up"> {{ tweet.likes }} </i>
                         </button>
                         <button class="btn btn-outline-info ml-2" (click)="openReplyTweetPopup(tweet)">
-                          <i class="fa fa-reply"></i>
+                          <i class="fa fa-reply"></i> {{tweet.replies?.length}}
                         </button>
                       </span>
                     </p>

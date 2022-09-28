@@ -1,45 +1,50 @@
 <mat-toolbar class="mat-elevation-z8">
   <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon *ngIf="!sidenav.opened">
-        menu
+      menu
     </mat-icon>
     <mat-icon *ngIf="sidenav.opened">
-        close
+      close
     </mat-icon>
-</button>
+  </button>
   <div class="row">
     <div class="column">
       <div class="icon-text">
         <button mat-button class="menu-button" routerLink="/home">
-         
-          <img class="logo" src="../../assets/tweet.png"/>
+
+          <img class="logo" src="../../assets/tweet.png" />
           <span class="name">Tweet App</span>
         </button>
       </div>
-    </div>
-    <div class="column" style="display: flex; justify-content: flex-end">
 
-      <div class="icon-text" style="display: flex; justify-content: flex-end">
-        <button mat-button class="menu-button" >
-          <mat-icon>chat</mat-icon>
-          <span class="name"><a routerLink="tweets/all" style=" color: #000000;">Tweets</a></span>
-        </button>
-      </div>
     </div>
-    <div class="column" style="display: flex; justify-content: flex-end">
-      <div class="icon-text" style="display: flex; justify-content: flex-end">
+    <div class="column">
+
+      <span class="icon-text" style="float: right;">
+        <button mat-button class="menu-button">
+          <mat-icon>chat</mat-icon>
+          <span class="name"><a routerLink="tweets/all" style=" color: #0e2712;">Tweets</a></span>
+        </button>
+      </span>
+      <span class="icon-text" style="float: right;">
+        <button mat-button class="menu-button">
+          <mat-icon>feedback</mat-icon>
+          <span class="name"><a routerLink="my-tweets" style=" color: #0e2712;">My tweets</a></span>
+        </button>
+      </span>
+      <span class="icon-text">
         <button mat-button class="menu-button">
           <mat-icon>supervisor_account</mat-icon>
-          <span class="name"><a routerLink="user-list" style=" color: #000000;">Users</a></span>
+          <span class="name"><a routerLink="user-list" style=" color: #0e2712;">Users</a></span>
         </button>
-      </div>
+      </span>
     </div>
   </div>
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav  #sidenav="matSidenav"  class="mat-elevation-z8" >
-    <img class="avatar mat-elevation-z8" src="https://img.icons8.com/plumpy/96/000000/test-account.png" />
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <img class="avatar" src="../../assets/person.png" />
     <h4 class="name">{{currentUser.username}}</h4>
     <mat-divider></mat-divider>
     <button mat-button class="menu-button">

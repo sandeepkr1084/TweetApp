@@ -24,6 +24,7 @@ import { ErrorInterceptor } from './services/ErrorInterceptor';
 import { EditTweetComponent } from './edit-tweet/edit-tweet.component';
 import { ReplyTweetComponent } from './reply-tweet/reply-tweet.component';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MyTweetsComponent } from './my-tweets/my-tweets.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
     ResetPassComponent,
     EditTweetComponent,
     ReplyTweetComponent,
+    MyTweetsComponent,
   ],
   imports: [
     BrowserModule,

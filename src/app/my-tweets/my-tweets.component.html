@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Nav Bar Component -->
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+
+      <div class="row row-cols-1" *ngFor="let tweet of tweetList;">
+
+        <div class="entete card w-100 h-100">
+          <div class="row no-gutters">
+            <div class="col-md-2">
+              <img src="../../assets/person.png" [ngClass]="true ?'card-img':'card-img grayscale'" alt="..." />
+            </div>
+            <div class="col-md-10">
+              <div class="card-body">
+                <h5 class="card-title">
+                  @{{ tweet.user.username }}
+                  <span class="float-right">
+                   <button class="btn btn-outline-danger ml-2" (click)="deleteTweet(tweet.id)">
+                      <i class="fa fa-trash"></i></button></span>
+                </h5>
+
+                <p class="card-text">
+                  {{ tweet.tweetName }}
+
+                  <small class="text-muted" *ngIf="tweet.tweetTag != null">#{{ tweet.tweetTag }}</small>
+                </p>
+              </div>
+              <div class="card-footer mt-auto">
+                <p class="card-text">
+                  <small class="text-muted">{{
+                    tweet.postDate | dateAgo
+                    }}</small>
+
+                  <span class="ml-3 float-right">
+                    <button class="btn btn-outline-primary" (click)="likeTweet(tweet.id)">
+                      <i class="fa fa-thumbs-up"> {{ tweet.likes }} </i>
+                    </button>
+                    
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- reply chat -->
+
+        <div class="row row-cols-1" *ngIf="tweet.replies.length > 0">
+          <div class="row w-100" *ngFor="let replyTweet of tweet.replies">
+            <div class="card mb-2 mt-2 w-75 ml-auto">
+              <div class="row no-gutters">
+                <div class="col-md-2">
+                  <img src="../../assets/icons8-male-user-96.png" class="card-img grayscale" alt="..." />
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-title">@{{ replyTweet.user.username }}</h5>
+
+                    <p class="card-text">
+                      {{ replyTweet.tweetName }}
+                      <small class="text-muted" *ngIf="replyTweet.tweetTag != null">#{{ replyTweet.tweetTag
+                        }}</small>
+                    </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{
+                        replyTweet.postDate | dateAgo
+                        }}</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
